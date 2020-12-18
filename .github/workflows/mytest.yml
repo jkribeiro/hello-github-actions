@@ -19,7 +19,7 @@ jobs:
       - uses: actions/checkout@v1
       - name: Test create a file
         run: pwd
-        working-directory: ./temp
+        working-directory: /tmp
 
 # jobs.<job_id>.services.<service_id>.image
 # The Docker image to use as the service container to run the action. The value can be the Docker Hub image name or a registry name.
