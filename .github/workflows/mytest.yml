@@ -18,7 +18,10 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - name: Test create a file
-        run: pwd
+        run: touch myfile.txt
+        working-directory: /tmp
+      - name: List /tmp folder
+        run: ls -l
         working-directory: /tmp
 
 # jobs.<job_id>.services.<service_id>.image
