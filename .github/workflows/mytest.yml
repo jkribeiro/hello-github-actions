@@ -5,21 +5,19 @@ jobs:
     name: Install and test
     runs-on: ubuntu-latest
     # Docker Hub image that job executes in.
-    # container:
-    #   image: drupal
+    container:
+      image: drupal
       # credentials:
       #   username: mona
       #   password: ${{ secrets.docker_hub_password}}
-    # steps:
-    #   - uses: actions/checkout@v1
-    #   - uses: ./action-a
-    #     with:
-    #       MY_NAME: "Mona"
+
     steps:
       - uses: actions/checkout@v1
+
       - name: Test create a file
         run: touch myfile.txt
         working-directory: /tmp
+
       - name: List /tmp folder
         run: ls -l
         working-directory: /tmp
