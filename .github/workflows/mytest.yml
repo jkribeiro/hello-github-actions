@@ -1,0 +1,25 @@
+name: Test workflow
+on: push
+jobs:
+  main:
+    name: Install and test
+    runs-on: ubuntu-latest
+    # Docker Hub image that job executes in.
+    # container:
+    #   image: drupal
+      # credentials:
+      #   username: mona
+      #   password: ${{ secrets.docker_hub_password}}
+    # steps:
+    #   - uses: actions/checkout@v1
+    #   - uses: ./action-a
+    #     with:
+    #       MY_NAME: "Mona"
+    steps:
+      - uses: actions/checkout@v1
+      - name: Test create a file
+        run: touch myfile.txt
+        working-directory: ~/
+
+# jobs.<job_id>.services.<service_id>.image
+# The Docker image to use as the service container to run the action. The value can be the Docker Hub image name or a registry name.
