@@ -22,5 +22,12 @@ jobs:
         run: ls -l
         working-directory: /tmp
 
+      - name: Check modules folder
+        run: ls -l
+        working-directory: /var/www/html/modules
+
+      - name: Hit local site
+        run: curl -k http://localhost:8080
+
 # jobs.<job_id>.services.<service_id>.image
 # The Docker image to use as the service container to run the action. The value can be the Docker Hub image name or a registry name.
